@@ -18,6 +18,7 @@ namespace Crosser
         public Form1()
         {
             InitializeComponent();
+            Form1.ChangeScreen(this, new MenuScreen());
         }
 
         public static void ChangeScreen(object sender, UserControl next)

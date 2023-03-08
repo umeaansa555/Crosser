@@ -28,7 +28,15 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
+            this.engine = new System.Windows.Forms.Timer(this.components);
             this.SuspendLayout();
+            // 
+            // engine
+            // 
+            this.engine.Enabled = true;
+            this.engine.Interval = 17;
+            this.engine.Tick += new System.EventHandler(this.engine_Tick);
             // 
             // GameScreen
             // 
@@ -42,5 +50,7 @@
         }
 
         #endregion
+
+        private System.Windows.Forms.Timer engine;
     }
 }

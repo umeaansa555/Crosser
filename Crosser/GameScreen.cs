@@ -16,5 +16,10 @@ namespace Crosser
         {
             InitializeComponent();
         }
+
+        private void engine_Tick(object sender, EventArgs e)
+        {
+
+        }
     }
 }

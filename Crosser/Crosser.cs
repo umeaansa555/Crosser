@@ -12,6 +12,13 @@ namespace Crosser
         public int speed = 6;
         public int width = 30, height = 10;
 
+
+        public Crosser(int _x, int _y)
+        {
+            this.x = _x;
+            this.y = _y;
+        }
+
         public void Move(string direction)
         {
             if (direction == "left")
