@@ -13,6 +13,7 @@ namespace Crosser
     public partial class GameScreen : UserControl
     {
         public int score = 0;
+
         SolidBrush yellowBrush = new SolidBrush(Color.Gold);
         SolidBrush redBrush = new SolidBrush(Color.Red);
         Crosser crosser;
