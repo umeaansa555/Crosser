@@ -42,6 +42,7 @@ namespace Crosser
 
         private void engine_Tick(object sender, EventArgs e)
         {
+            #region shmovement
             if (leftArrowDown && crosser.x > 0)
             {
                 crosser.Move("left");
@@ -54,10 +55,32 @@ namespace Crosser
             {
                 crosser.Move("up");
             }
-            if (downArrowDown && crosser.x < this.Height - crosser.height)
+            if (downArrowDown && crosser.y < this.Height - crosser.height)
             {
                 crosser.Move("down");
             }
+            #endregion
+
+            #region fundamentals
+            /* if (leftArrowDown && crosser.x > 0)
+            {
+                crosser.x -= crosser.speed;
+            }
+            if (rightArrowDown && crosser.x < this.Width - crosser.width)
+            {
+                crosser.x += crosser.speed;
+            }
+            if (upArrowDown && crosser.y > 0)
+            {
+                crosser.y -= crosser.speed;
+            }
+            if (downArrowDown && crosser.x < this.Height - crosser.height)
+            {
+                crosser.y += crosser.speed;
+            } */
+            #endregion
+
+            Refresh();
         }
 
         private void GameScreen_Paint(object sender, PaintEventArgs e)

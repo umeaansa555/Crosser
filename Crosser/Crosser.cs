@@ -9,7 +9,7 @@ namespace Crosser
     internal class Crosser
     {
         public int x, y;
-        public int speed = 60;
+        public int speed = 10;
         public int width = 20, height = 40;
 
 
@@ -21,7 +21,8 @@ namespace Crosser
 
         public void Move(string direction)
         {
-            if (direction == "left")
+
+            if(direction == "left")
             {
                 x -= speed;
             }
@@ -37,28 +38,6 @@ namespace Crosser
             {
                 y += speed;
             }
-
-
-
-
-            /*int screenWidth = GameScreen.Width;
-
-            if (GameScreen.leftArrowDown && this.x > 0)
-            {
-                x -= speed;
-            }
-            if (GameScreen.rightArrowDown && this.x < GameScreen.Width - this.width)
-            {
-                crosser.Move("right");
-            }
-            if (upArrowDown && crosser.y > 0)
-            {
-                crosser.Move("up");
-            }
-            if (downArrowDown && crosser.x < this.Height - crosser.height)
-            {
-                crosser.Move("down");
-            } */
 
         }
     }
