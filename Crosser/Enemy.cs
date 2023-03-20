@@ -9,19 +9,20 @@ namespace Crosser
 {
     internal class Enemy
     {
-        public int x = 0 , y, width = 30 , height = 15, speed = 6;
+        public int x, y, width = 30 , height = 15, xSpeed = 6;
         
 
-        public Enemy(int _x, int _speed)
+        public Enemy(int _x, int _y, int _xSpeed)
         {
             this.x = _x;
-            this.speed = _speed;
+            this.y = _y;
+            this.xSpeed = _xSpeed;
         }
 
 
         public void Move(int screenWidth, int screenHeight)
         {
-            x += speed;
+            x += xSpeed;
 
             /*if (x > screenWidth - width || x < 0)
             {

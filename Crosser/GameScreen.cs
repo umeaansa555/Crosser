@@ -14,13 +14,30 @@ namespace Crosser
     {
         public int score = 0;
         SolidBrush yellowBrush = new SolidBrush(Color.Gold);
+        SolidBrush redBrush = new SolidBrush(Color.Red);
         Crosser crosser;
-        Boolean leftArrowDown, rightArrowDown, upArrowDown, downArrowDown;
+        public static Boolean leftArrowDown, rightArrowDown, upArrowDown, downArrowDown;
+        Random randGen = new Random();
+        List<Enemy> enemies = new List<Enemy>();
 
         public GameScreen()
         {
             InitializeComponent();
             crosser = new Crosser(50, 100);
+        }
+
+        public void initializeGame()
+        {
+            
+        }
+
+        public void newEnemy()
+        {
+            int x = randGen.Next(10, this.Width - 30);
+            int y = randGen.Next(10, this.Height - 30);
+            int xSpeed = randGen.Next(1, 10);
+            Enemy newEnemy = new Enemy(x, y, xSpeed);
+            enemies.Add(newEnemy);
         }
 
         private void engine_Tick(object sender, EventArgs e)
@@ -46,6 +63,7 @@ namespace Crosser
         private void GameScreen_Paint(object sender, PaintEventArgs e)
         {
             e.Graphics.FillRectangle(yellowBrush, crosser.x, crosser.y, crosser.width, crosser.height);
+            //e.Graphics.FillRectangle(redBrush,)
         }
 
         private void GameScreen_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)
