@@ -23,12 +23,16 @@ namespace Crosser
         public GameScreen()
         {
             InitializeComponent();
-            crosser = new Crosser(50, 100);
+            InitializeGame();
         }
 
-        public void initializeGame()
+        public void InitializeGame()
         {
-            
+            crosser = new Crosser(50, 100);
+            for (int i = 3; i < 3; i++)
+            {
+                newEnemy();
+            }
         }
 
         public void newEnemy()
@@ -60,7 +64,6 @@ namespace Crosser
                 crosser.Move("down");
             }
             #endregion
-
             #region fundamentals
             /* if (leftArrowDown && crosser.x > 0)
             {
@@ -86,7 +89,10 @@ namespace Crosser
         private void GameScreen_Paint(object sender, PaintEventArgs e)
         {
             e.Graphics.FillRectangle(yellowBrush, crosser.x, crosser.y, crosser.width, crosser.height);
-            //e.Graphics.FillRectangle(redBrush,)
+            foreach (Enemy e in enemies)
+            {
+                e.Graphics.FillRectangle(redBrush, e.x, e.y, e.width, e.height);
+            }
         }
 
         private void GameScreen_PreviewKeyDown(object sender, PreviewKeyDownEventArgs e)

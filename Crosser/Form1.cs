@@ -12,7 +12,7 @@ namespace Crosser
 {
     public partial class Form1 : Form
     {
-        List<Enemy> enemies= new List<Enemy>();
+
 
 
         public Form1()
