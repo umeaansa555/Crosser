@@ -9,7 +9,7 @@ namespace Crosser
 {
     internal class Enemy
     {
-        public int x = 0, y, width = 30 , height = 15, xSpeed;
+        public int x = 0, y, width = 40 , height = 15, xSpeed;
         
 
         public Enemy( int _y, int _xSpeed)
