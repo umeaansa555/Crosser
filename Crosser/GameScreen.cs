@@ -30,11 +30,14 @@ namespace Crosser
         public void InitializeGame()
         {
             crosser = new Crosser(300, 300);
-            newEnemy();
-            /*for (int i = 3; i < 3; i++)
+
+            enemies.Clear();
+
+            for (int i = 1; i <= 3; i++)
             {
                 newEnemy();
-            } */
+            }
+
             scoreLabel.Text = $"{score}";
 
         }
@@ -68,24 +71,6 @@ namespace Crosser
                 crosser.Move("down");
             }
             #endregion
-            #region fundamentals
-            /* if (leftArrowDown && crosser.x > 0)
-            {
-                crosser.x -= crosser.speed;
-            }
-            if (rightArrowDown && crosser.x < this.Width - crosser.width)
-            {
-                crosser.x += crosser.speed;
-            }
-            if (upArrowDown && crosser.y > 0)
-            {
-                crosser.y -= crosser.speed;
-            }
-            if (downArrowDown && crosser.x < this.Height - crosser.height)
-            {
-                crosser.y += crosser.speed;
-            } */
-            #endregion
 
 
             foreach (Enemy n in enemies)
@@ -95,9 +80,29 @@ namespace Crosser
 
             foreach (Enemy n in enemies)
             {
+                // check if n is > width of screen
+                //if
+                if (n.x > this.Width - n.width || n.x < 0)
+                {
+                    enemies.Remove(n);
+                    break;
+                }
+
+                //enemies.Remove(n);
+                //break;
+            }
+
+            foreach (Enemy n in enemies)
+            {
                 if (n.Collision(crosser))
                 {
+                    
                     InitializeGame();
+                    break;
+                }
+                else
+                {
+                    
                 }
             }
 

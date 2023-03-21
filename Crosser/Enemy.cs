@@ -23,11 +23,6 @@ namespace Crosser
         public void Move(int screenWidth, int screenHeight)
         {
             x += xSpeed;
-
-            /*if (x > screenWidth - width || x < 0)
-            {
-                GameScreen.enemies.Remove(this);
-            } */
         }
         public bool Collision(Crosser c)
         {
