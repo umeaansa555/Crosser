@@ -29,11 +29,13 @@ namespace Crosser
 
         public void InitializeGame()
         {
-            crosser = new Crosser(50, 100);
+            crosser = new Crosser(300, 300);
             for (int i = 3; i < 3; i++)
             {
                 newEnemy();
             }
+            scoreLabel.Text = $"{score}";
+
         }
 
         public void newEnemy()
@@ -84,15 +86,23 @@ namespace Crosser
             } */
             #endregion
 
+            if (crosser.y == 0)
+            {
+                score++;
+                scoreLabel.Text = $"{score}";
+                InitializeGame();
+            }
+
+
             Refresh();
         }
 
         private void GameScreen_Paint(object sender, PaintEventArgs e)
         {
             e.Graphics.FillRectangle(yellowBrush, crosser.x, crosser.y, crosser.width, crosser.height);
-            foreach (Enemy e in enemies)
+            foreach (Enemy n in enemies)
             {
-                e.Graphics.FillRectangle(redBrush, e.x, e.y, e.width, e.height);
+                e.Graphics.FillRectangle(redBrush, n.x, n.y, n.width, n.height);
             }
         }
 

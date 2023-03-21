@@ -45,9 +45,8 @@
             this.scoreLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 16.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.scoreLabel.Location = new System.Drawing.Point(620, 13);
             this.scoreLabel.Name = "scoreLabel";
-            this.scoreLabel.Size = new System.Drawing.Size(92, 32);
+            this.scoreLabel.Size = new System.Drawing.Size(0, 32);
             this.scoreLabel.TabIndex = 0;
-            this.scoreLabel.Text = "label1";
             this.scoreLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // GameScreen
