@@ -30,10 +30,11 @@ namespace Crosser
         public void InitializeGame()
         {
             crosser = new Crosser(300, 300);
-            for (int i = 3; i < 3; i++)
+            newEnemy();
+            /*for (int i = 3; i < 3; i++)
             {
                 newEnemy();
-            }
+            } */
             scoreLabel.Text = $"{score}";
 
         }
@@ -86,12 +87,6 @@ namespace Crosser
             } */
             #endregion
 
-            if (crosser.y == 0)
-            {
-                score++;
-                scoreLabel.Text = $"{score}";
-                InitializeGame();
-            }
 
             foreach (Enemy n in enemies)
             {
@@ -105,6 +100,15 @@ namespace Crosser
                     InitializeGame();
                 }
             }
+
+
+            if (crosser.y == 0)
+            {
+                score++;
+                scoreLabel.Text = $"{score}";
+                InitializeGame();
+            }
+
 
             Refresh();
         }
