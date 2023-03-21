@@ -81,15 +81,12 @@ namespace Crosser
             foreach (Enemy n in enemies)
             {
                 // check if n is > width of screen
-                //if
+                // and remove enemy if it is
                 if (n.x > this.Width - n.width || n.x < 0)
                 {
                     enemies.Remove(n);
                     break;
                 }
-
-                //enemies.Remove(n);
-                //break;
             }
 
             foreach (Enemy n in enemies)
@@ -99,10 +96,6 @@ namespace Crosser
                     
                     InitializeGame();
                     break;
-                }
-                else
-                {
-                    
                 }
             }
 

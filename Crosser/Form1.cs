@@ -8,6 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
+// Crosser - 2D animated game using classes and objects
+// A. Ansari
+// March 2023
+
+
 namespace Crosser
 {
     public partial class Form1 : Form
