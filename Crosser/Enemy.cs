@@ -9,12 +9,12 @@ namespace Crosser
 {
     internal class Enemy
     {
-        public int x, y, width = 30 , height = 15, xSpeed = 6;
+        public int x = 0, y, width = 30 , height = 15, xSpeed;
         
 
-        public Enemy(int _x, int _y, int _xSpeed)
+        public Enemy( int _y, int _xSpeed)
         {
-            this.x = _x;
+            //this.x = _x;
             this.y = _y;
             this.xSpeed = _xSpeed;
         }
@@ -26,8 +26,8 @@ namespace Crosser
 
             /*if (x > screenWidth - width || x < 0)
             {
-                speed *= -1;
-            }*/
+                GameScreen.enemies.Remove(this);
+            } */
         }
         public bool Collision(Crosser c)
         {
@@ -37,16 +37,14 @@ namespace Crosser
             if (enemyRec.IntersectsWith(crosserRec))
             {
                 #region
-                /*if (speed > 0)
+                if (xSpeed > 0)
                 {
                     x = c.x - width;
                 }
                 else
                 {
-                    x = c.x + c.height;
+                    y = c.y + c.height;
                 }
-
-                speed *= -1; */
                 #endregion
                 return true;
             }

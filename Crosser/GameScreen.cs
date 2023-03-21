@@ -40,10 +40,10 @@ namespace Crosser
 
         public void newEnemy()
         {
-            int x = randGen.Next(10, this.Width - 30);
-            int y = randGen.Next(10, this.Height - 30);
+            //int x = randGen.Next(10, this.Width - 30);
+            int y = randGen.Next(50, this.Height - 30);
             int xSpeed = randGen.Next(1, 10);
-            Enemy newEnemy = new Enemy(x, y, xSpeed);
+            Enemy newEnemy = new Enemy(y, xSpeed);
             enemies.Add(newEnemy);
         }
 
@@ -93,6 +93,18 @@ namespace Crosser
                 InitializeGame();
             }
 
+            foreach (Enemy n in enemies)
+            {
+                n.Move(this.Width, this.Height);
+            }
+
+            foreach (Enemy n in enemies)
+            {
+                if (n.Collision(crosser))
+                {
+                    InitializeGame();
+                }
+            }
 
             Refresh();
         }
